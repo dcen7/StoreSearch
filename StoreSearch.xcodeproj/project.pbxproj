@@ -17,6 +17,7 @@
 		FB877FE6294375A000C1B516 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB877FE5294375A000C1B516 /* SearchResultCell.xib */; };
 		FB877FE82947632B00C1B516 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB877FE72947632B00C1B516 /* SearchResultCell.swift */; };
 		FB877FEA2947666100C1B516 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB877FE92947666100C1B516 /* NothingFoundCell.xib */; };
+		FB877FEC294B5D0400C1B516 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB877FEB294B5D0400C1B516 /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FB877FE5294375A000C1B516 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		FB877FE72947632B00C1B516 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		FB877FE92947666100C1B516 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		FB877FEB294B5D0400C1B516 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				FB877FE5294375A000C1B516 /* SearchResultCell.xib */,
 				FB877FE72947632B00C1B516 /* SearchResultCell.swift */,
 				FB877FE92947666100C1B516 /* NothingFoundCell.xib */,
+				FB877FEB294B5D0400C1B516 /* LoadingCell.xib */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				FB877FDC2940E8D300C1B516 /* LaunchScreen.storyboard in Resources */,
 				FB877FD92940E8D300C1B516 /* Assets.xcassets in Resources */,
+				FB877FEC294B5D0400C1B516 /* LoadingCell.xib in Resources */,
 				FB877FE6294375A000C1B516 /* SearchResultCell.xib in Resources */,
 				FB877FEA2947666100C1B516 /* NothingFoundCell.xib in Resources */,
 				FB877FD72940E8D000C1B516 /* Main.storyboard in Resources */,
