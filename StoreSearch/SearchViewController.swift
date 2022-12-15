@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
     
     var searchResults = [SearchResult]()
     var hasSearched = false
-    var isloading = false
+    var isLoading = false
     
     struct TableView {
         struct CellIdentifiers {
@@ -45,15 +45,7 @@ class SearchViewController: UIViewController {
         return url!
     }
     
-    func performStoreRequest(with url: URL) -> Data? {
-        do {
-            return try Data(contentsOf: url)
-        } catch {
-            print("Download Error: \(error.localizedDescription)")
-            showNNetworkError()
-            return nil
-        }
-    }
+    
     
     func parse(data: Data) -> [SearchResult] {
         do {
@@ -81,30 +73,48 @@ extension SearchViewController: UISearchBarDelegate {
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
             
-            isloading = true
+            isLoading = true
             tableView.reloadData()
             
             hasSearched = true
             searchResults = []
             
-            let queue = DispatchQueue.global()
-            let url = self.iTunesURL(searchText: searchBar.text!)
-
-            queue.async {
-                
-                if let data = self.performStoreRequest(with: url) {
-                    self.searchResults = self.parse(data: data)
-                    self.searchResults.sort(by: < )
-                    DispatchQueue.main.async {
-                        self.isloading = false
-                        self.tableView.reloadData()
+            let url = iTunesURL(searchText: searchBar.text!)
+            let session = URLSession.shared
+            let dataTask = session.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("Failure! \(error.localizedDescription)")
+                } else if let httpResponse = response as? HTTPURLResponse ,httpResponse.statusCode == 200 {
+                    if let data = data {
+                        self.searchResults = self.parse(data: data)
+                        self.searchResults.sort(by: < )
+                        DispatchQueue.main.async {
+                           //print("On main thread? " + (Thread.current.isMainThread ? "Yes" : "No"))
+                            self.isLoading = false
+                            self.tableView.reloadData()
+                        }
+                        return
                     }
-                    return
+                } else {
+                    print("Faliure! \(response!)")
+                }
+                
+                DispatchQueue.main.async {
+                  self.hasSearched = false
+                  self.isLoading = false
+                  self.tableView.reloadData()
+                  self.showNetworkError()
                 }
             }
+            
+            dataTask.resume()
+
         }
     }
     
+    func showNetworkError() {
+        print("Network Error occured")
+    }
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
     }
@@ -115,7 +125,7 @@ extension SearchViewController: UISearchBarDelegate {
 // MARK: - Table View Delegate
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isloading {
+        if isLoading {
             return 1
         } else if !hasSearched {
             return 0
@@ -127,7 +137,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if isloading {
+        if isLoading {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.loadingCell, for: indexPath)
             let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
             spinner.startAnimating()
@@ -155,7 +165,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if searchResults.count == 0 || isloading {
+        if searchResults.count == 0 || isLoading {
             return nil
         } else {
             return indexPath
