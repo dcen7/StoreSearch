@@ -69,7 +69,6 @@ class SearchViewController: UIViewController {
 // MARK: - Search Bar Delegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-       
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
             
@@ -106,9 +105,7 @@ extension SearchViewController: UISearchBarDelegate {
                   self.showNetworkError()
                 }
             }
-            
             dataTask.resume()
-
         }
     }
     
