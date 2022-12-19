@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB040BB02950C919000A73A2 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB040BAF2950C919000A73A2 /* UIImageView+DownloadImage.swift */; };
 		FB877FD02940E8D000C1B516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB877FCF2940E8D000C1B516 /* AppDelegate.swift */; };
 		FB877FD22940E8D000C1B516 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB877FD12940E8D000C1B516 /* SceneDelegate.swift */; };
 		FB877FD42940E8D000C1B516 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB877FD32940E8D000C1B516 /* SearchViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB040BAF2950C919000A73A2 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		FB877FCC2940E8D000C1B516 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB877FCF2940E8D000C1B516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB877FD12940E8D000C1B516 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				FB877FE72947632B00C1B516 /* SearchResultCell.swift */,
 				FB877FE92947666100C1B516 /* NothingFoundCell.xib */,
 				FB877FEB294B5D0400C1B516 /* LoadingCell.xib */,
+				FB040BAF2950C919000A73A2 /* UIImageView+DownloadImage.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				FB877FD42940E8D000C1B516 /* SearchViewController.swift in Sources */,
 				FB877FD02940E8D000C1B516 /* AppDelegate.swift in Sources */,
+				FB040BB02950C919000A73A2 /* UIImageView+DownloadImage.swift in Sources */,
 				FB877FE42942405700C1B516 /* SearchResults.swift in Sources */,
 				FB877FD22940E8D000C1B516 /* SceneDelegate.swift in Sources */,
 				FB877FE82947632B00C1B516 /* SearchResultCell.swift in Sources */,
