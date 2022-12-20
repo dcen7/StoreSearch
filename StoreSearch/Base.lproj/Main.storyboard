@@ -91,6 +91,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ag-0T-fot" userLabel="Pop-up View">
                                 <rect key="frame" x="47.5" y="193.5" width="280" height="260"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xyK-QA-jvP">
+                                        <rect key="frame" x="16" y="16" width="248" height="228"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Oa-Hy-MmN">
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="0.0"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BEc-Ta-hUM" userLabel="Grid">
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="228"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nhq-hN-cDY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="228"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-Pr-ajt" userLabel="Close Button">
                                         <rect key="frame" x="227" y="8" width="45" height="31"/>
                                         <state key="normal" title="Button"/>
@@ -102,7 +118,11 @@
                                 </subviews>
                                 <color key="backgroundColor" name="DetailBG"/>
                                 <constraints>
+                                    <constraint firstItem="xyK-QA-jvP" firstAttribute="leading" secondItem="4ag-0T-fot" secondAttribute="leading" constant="16" id="1Md-1z-zNa"/>
+                                    <constraint firstAttribute="bottom" secondItem="xyK-QA-jvP" secondAttribute="bottom" constant="16" id="31t-Ml-vkc"/>
+                                    <constraint firstItem="xyK-QA-jvP" firstAttribute="top" secondItem="4ag-0T-fot" secondAttribute="top" constant="16" id="aVJ-Xf-AUU"/>
                                     <constraint firstAttribute="trailing" secondItem="6ff-Pr-ajt" secondAttribute="trailing" constant="8" id="e8v-r6-hLL"/>
+                                    <constraint firstAttribute="trailing" secondItem="xyK-QA-jvP" secondAttribute="trailing" constant="16" id="fUd-IK-FWt"/>
                                     <constraint firstItem="6ff-Pr-ajt" firstAttribute="top" secondItem="4ag-0T-fot" secondAttribute="top" constant="8" id="neD-xA-0Bh"/>
                                 </constraints>
                             </view>
@@ -121,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtT-nl-G96" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="90"/>
+            <point key="canvasLocation" x="957.60000000000002" y="89.505247376311857"/>
         </scene>
     </scenes>
     <color key="tintColor" name="AccentColor"/>
