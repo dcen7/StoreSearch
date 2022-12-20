@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Search" customClass="SearchViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,14 +73,69 @@
                         <outlet property="searchBar" destination="cb7-aY-eWM" id="c1Y-uw-NYz"/>
                         <outlet property="segmentedControl" destination="S4f-0W-6ST" id="psS-gW-pmK"/>
                         <outlet property="tableView" destination="KeG-Cr-0wg" id="RDG-e6-EZY"/>
+                        <segue destination="4v1-1f-kBT" kind="presentation" identifier="ShowDetail" id="Yab-2R-eIl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="101.59999999999999" y="83.208395802098963"/>
         </scene>
+        <!--Detail-->
+        <scene sceneID="t7W-kB-88U">
+            <objects>
+                <viewController id="4v1-1f-kBT" userLabel="Detail" customClass="DetailViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8v4-sb-uWF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ag-0T-fot" userLabel="Pop-up View">
+                                <rect key="frame" x="47.5" y="193.5" width="280" height="260"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ff-Pr-ajt" userLabel="Close Button">
+                                        <rect key="frame" x="227" y="8" width="45" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="close" destination="4v1-1f-kBT" eventType="touchUpInside" id="67w-8o-Wwg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="DetailBG"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6ff-Pr-ajt" secondAttribute="trailing" constant="8" id="e8v-r6-hLL"/>
+                                    <constraint firstItem="6ff-Pr-ajt" firstAttribute="top" secondItem="4ag-0T-fot" secondAttribute="top" constant="8" id="neD-xA-0Bh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ccL-bz-eWi"/>
+                        <color key="backgroundColor" name="ArtistName"/>
+                        <constraints>
+                            <constraint firstItem="4ag-0T-fot" firstAttribute="top" secondItem="ccL-bz-eWi" secondAttribute="top" constant="193.5" id="6bP-sP-tnP"/>
+                            <constraint firstItem="4ag-0T-fot" firstAttribute="centerX" secondItem="8v4-sb-uWF" secondAttribute="centerX" id="Cf4-GX-KWf"/>
+                            <constraint firstItem="ccL-bz-eWi" firstAttribute="trailing" secondItem="4ag-0T-fot" secondAttribute="trailing" constant="47.5" id="IZB-we-QQ1"/>
+                            <constraint firstItem="ccL-bz-eWi" firstAttribute="bottom" secondItem="4ag-0T-fot" secondAttribute="bottom" constant="193.5" id="V3h-G5-x9F"/>
+                            <constraint firstItem="4ag-0T-fot" firstAttribute="centerY" secondItem="8v4-sb-uWF" secondAttribute="centerY" id="j7R-NS-cg5"/>
+                            <constraint firstItem="4ag-0T-fot" firstAttribute="leading" secondItem="ccL-bz-eWi" secondAttribute="leading" constant="47.5" id="uuZ-0W-G7r"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jtT-nl-G96" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="90"/>
+        </scene>
     </scenes>
+    <color key="tintColor" name="AccentColor"/>
     <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="AccentColor">
+            <color red="0.039215686274509803" green="0.31372549019607843" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ArtistName">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DetailBG">
+            <color red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="SearchBar">
             <color red="0.70588235294117652" green="0.94117647058823528" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
