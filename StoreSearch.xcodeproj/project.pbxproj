@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0131192977009E0057C7EC /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0131182977009E0057C7EC /* Search.swift */; };
 		FB040BB02950C919000A73A2 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB040BAF2950C919000A73A2 /* UIImageView+DownloadImage.swift */; };
 		FB040BB22951F282000A73A2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB040BB12951F281000A73A2 /* DetailViewController.swift */; };
 		FB52250C2959EC9200BF8A4F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52250B2959EC9200BF8A4F /* GradientView.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB0131182977009E0057C7EC /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		FB040BAF2950C919000A73A2 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		FB040BB12951F281000A73A2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FB52250B2959EC9200BF8A4F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				FB52250F295B498100BF8A4F /* SlideOutAnimationController.swift */,
 				FB522511295B535D00BF8A4F /* LandscapeViewController.swift */,
 				FB52252D2964641200BF8A4F /* FadeOutAnimationController.swift */,
+				FB0131182977009E0057C7EC /* Search.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0131192977009E0057C7EC /* Search.swift in Sources */,
 				FB877FD42940E8D000C1B516 /* SearchViewController.swift in Sources */,
 				FB877FD02940E8D000C1B516 /* AppDelegate.swift in Sources */,
 				FB52252E2964641200BF8A4F /* FadeOutAnimationController.swift in Sources */,
