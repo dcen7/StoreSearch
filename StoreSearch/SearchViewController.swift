@@ -89,6 +89,9 @@ class SearchViewController: UIViewController {
             coordinator.animate(
                 alongsideTransition: { _ in
                     controller.view.alpha = 0
+                    if self.presentedViewController != nil {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }, completion: { _ in
                     controller.view.removeFromSuperview()
                     controller.removeFromParent()
@@ -111,6 +114,7 @@ extension SearchViewController: UISearchBarDelegate {
                     self.showNetworkError()
                 }
                 self.tableView.reloadData()
+                self.landscapeVC?.searchResultsReceived()
             }
         }
         
@@ -167,8 +171,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "ShowDetail", sender: indexPath)
-        
-        
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -178,7 +180,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         case .results:
             return indexPath
         }
-
     }
     
     // MARK: - Navigation
